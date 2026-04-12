@@ -4,7 +4,7 @@ I'm Sinse — solo dev building **AI-powered tools** on self-hosted infrastructu
 
 ### 🚀 Flagship project
 
-**[AcademIA](https://github.com/Sinsemilila/sinse-workspace)** — AI-powered language learning platform with adaptive pedagogy
+**[AcademIA](https://github.com/Sinsemilila/academIA)** — AI-powered language learning platform with adaptive pedagogy
 
 A self-hosted platform that uses 5 LLMs (via LiteLLM) to deliver personalized English lessons. Features a 28-node Dify chatflow (Teacher agent), 2-level memory system, gamification (XP, streaks, badges), and Cambridge-aligned CECRL assessments. Built in 8 days, 17 Teacher versions, 6 active users.
 
@@ -20,4 +20,4 @@ A self-hosted platform that uses 5 LLMs (via LiteLLM) to deliver personalized En
 
 ### 🤖 How I work
 
-I build with **Claude Code + Gemini CLI** in parallel — isolated worktrees, cross-AI review, and a [multi-agent workflow](https://github.com/Sinsemilila/sinse-workspace) with 20 custom bash tools. Inspired by [Peter Steinberger's](https://github.com/steipete) agentic engineering patterns.
+I build with **Claude Code + Gemini CLI** in parallel — isolated worktrees, cross-AI review, and a custom multi-agent workflow with 20+ bash tools. Inspired by [Peter Steinberger's](https://github.com/steipete) agentic engineering patterns.
