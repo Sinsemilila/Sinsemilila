@@ -40,7 +40,7 @@ AI language learning platform — adaptive lessons powered by 5+ LLMs (Groq, Mis
 
 ### 🤖 How I work
 
-I build with **Claude Code (Sonnet 4.6, 1M context)** — heavy custom workflow toolkit :
+I build with **Claude Code (Opus 4.7, 1M context)** — heavy custom workflow toolkit :
 
 - `ship` (granular commits + auto-push + secret pre-check)
 - `safepoint` (rollback checkpoints), `decision` (atomic ADRs)
