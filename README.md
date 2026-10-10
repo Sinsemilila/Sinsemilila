@@ -7,6 +7,33 @@ J'apprends en construisant : un homelab qui tourne en vrai, documenté décision
 
 ### 🧱 Ce qui tourne aujourd'hui
 
+```mermaid
+flowchart LR
+  user(["👤 Utilisateurs"]) --> cf["☁️ Cloudflare<br/>tunnel + Zero Trust"]
+  cf --> svc
+
+  subgraph pve["🖥️ Proxmox — nœud unique"]
+    direction TB
+    subgraph prod["VM services · Debian"]
+      svc["Apps web + API<br/>(Docker)"]
+      ia["Orchestration IA<br/>LiteLLM · Dify · n8n"]
+      db[("PostgreSQL")]
+      svc --- ia
+      svc --- db
+    end
+    lab["VM lab · Debian"]
+    win["VM build · Windows 11"]
+    fut["🔨 À venir<br/>Zones cloisonnées · firewall<br/>AD / GPO · supervision · lab cyber"]
+  end
+
+  prod -- "restic, restauration testée" --> bk[("🔒 Sauvegardes<br/>chiffrées hors site")]
+  pve -- "vzdump chiffré" --> bk
+  prod -. "tests de santé" .-> phone["📱 Alertes"]
+
+  classDef todo stroke-dasharray: 5 5,fill:none
+  class fut todo
+```
+
 Un hyperviseur Proxmox à la maison, qui porte mes services au quotidien :
 
 - **Exposition sans port ouvert** — tunnel Cloudflare + Zero Trust Access devant chaque service
