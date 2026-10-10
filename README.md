@@ -5,9 +5,14 @@ L'IA est au centre de ma façon de travailler : je monte avec elle ce qui doit t
 
 ---
 
+<img src="assets/architecture.jpg" alt="Workflow de développement (spec, run autonome, porte de tests, relecture, ship) et architecture du homelab Proxmox" width="100%">
+
 ### 🤖 Mon atelier IA
 
 Une session Claude Code tourne en permanence sur mon serveur. Je la pilote depuis le PC ou le téléphone, elle écrit les cahiers des charges avec moi, lance des agents autonomes, relit leur travail et publie.
+
+<details>
+<summary>Le flux en version texte</summary>
 
 ```mermaid
 flowchart LR
@@ -22,6 +27,8 @@ flowchart LR
   ship --> gh["GitHub"]
 ```
 
+</details>
+
 - **Agents encadrés** — une run autonome ne peut ni committer ni se déclarer « finie » si la porte de tests est rouge ; kill-switch, une run à la fois
 - **Un humain au bon endroit** — rien ne part sans mon « go » ; la publication suit une politique écrite par projet
 - **Mémoire longue** — vault Obsidian synchronisé sur mes appareils, lu par un sous-agent léger pour ne pas saturer le contexte
@@ -33,6 +40,9 @@ flowchart LR
 - **Passerelle LLM maison** — LiteLLM devant plusieurs fournisseurs, orchestration Dify et n8n pour les apps
 
 ### 🧱 Le homelab
+
+<details>
+<summary>Le homelab en version texte</summary>
 
 ```mermaid
 flowchart LR
@@ -61,6 +71,8 @@ flowchart LR
   class fut todo
   class apps sleep
 ```
+
+</details>
 
 - **Publication par tunnel sortant** — Cloudflare Tunnel + Zero Trust Access devant chaque service, pas de redirection de port
 - **Administration à distance par réseau privé** — Tailscale (mesh WireGuard) entre PC, téléphone, hyperviseur et serveur
