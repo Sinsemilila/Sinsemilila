@@ -88,6 +88,7 @@ Première décision sur la table : Tailscale passe par-dessus tout cloisonnement
 
 ### 📦 Projets
 
+<!-- vitrine:projets:debut -->
 | | Projet | Ce que c'est | État |
 |---|---|---|---|
 | 🧱 | **socle** | Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber | ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square) |
@@ -97,6 +98,7 @@ Première décision sur la table : Tailscale passe par-dessus tout cloisonnement
 | 🏎️ | **RaceIA** | Ingénieur de course IA pour Assetto Corsa : télémétrie, analyse des virages, briefing | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 | 🐉 | **MJIA** | Copilote IA de maître du jeu D&D 5e sur Foundry VTT auto-hébergé | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 | ✅ | **Eisenday** | App mobile de productivité (matrice d'Eisenhower), 13 langues | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
+<!-- vitrine:projets:fin -->
 
 ### 🛠 Outils
 
