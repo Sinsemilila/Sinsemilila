@@ -38,4 +38,4 @@ Garde-fous : un commit = une unité annulable, décisions écrites (ADR), contr�
 
 ### 📍 Contact
 
-`sinseproduction@gmail.com` · Sardan (Gard) — bassin montpelliérain
+`sinseproduction@gmail.com` · Nîmes (Gard) — bassin montpelliérain
