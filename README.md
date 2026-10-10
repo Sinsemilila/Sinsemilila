@@ -35,6 +35,7 @@ flowchart LR
 flowchart LR
   user(["👤 Utilisateurs"]) --> cf["☁️ Cloudflare<br/>tunnel + Zero Trust"]
   cf --> svc
+  admin(["🛠️ Moi · admin<br/>PC · téléphone"]) -. "Tailscale<br/>mesh WireGuard" .-> pve
 
   subgraph pve["🖥️ Proxmox — nœud unique"]
     direction TB
@@ -59,12 +60,14 @@ flowchart LR
 ```
 
 - **Exposition sans port ouvert** — tunnel Cloudflare + Zero Trust Access devant chaque service
+- **Administration à distance par réseau privé** — Tailscale (mesh WireGuard) entre PC, téléphone, hyperviseur et serveur
 - **Sauvegardes vérifiées, pas supposées** — restic avec test de restauration automatique, copie froide, sauvegardes de VM chiffrées hors site
 - **Secrets hors du code** — chiffrés (sops), et chaque commit passe un détecteur de secrets
 - **Supervision** — tests de santé planifiés (timers systemd), alertes sur téléphone
 - **Procédures de reprise écrites** — et déjà utilisées sur incident réel
 
 **En construction — `socle`**, selon quatre règles : les frontières réseau sont *appliquées*, pas supposées · tout est *reconstructible*, et ça a été prouvé · on sait que c'est cassé *avant* l'utilisateur · chaque décision est écrite, le *pourquoi* plutôt que le *quoi*.
+Première décision sur la table : Tailscale passe par-dessus tout cloisonnement — son statut se tranche *avant* de poser les zones, pas après.
 
 ### 📦 Projets
 
@@ -79,7 +82,7 @@ flowchart LR
 
 ### 🛠 Outils
 
-**Infra** ![Proxmox](https://img.shields.io/badge/Proxmox-E57000?style=flat-square&logo=proxmox&logoColor=white) ![Debian](https://img.shields.io/badge/Debian-A81D33?style=flat-square&logo=debian&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Cloudflare Zero Trust](https://img.shields.io/badge/Cloudflare_Zero_Trust-F38020?style=flat-square&logo=cloudflare&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![restic](https://img.shields.io/badge/restic-2F3640?style=flat-square) ![sops](https://img.shields.io/badge/sops-2F3640?style=flat-square) ![Windows 11](https://img.shields.io/badge/Windows_11-0078D4?style=flat-square&logo=windows&logoColor=white)
+**Infra** ![Proxmox](https://img.shields.io/badge/Proxmox-E57000?style=flat-square&logo=proxmox&logoColor=white) ![Debian](https://img.shields.io/badge/Debian-A81D33?style=flat-square&logo=debian&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Cloudflare Zero Trust](https://img.shields.io/badge/Cloudflare_Zero_Trust-F38020?style=flat-square&logo=cloudflare&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![restic](https://img.shields.io/badge/restic-2F3640?style=flat-square) ![sops](https://img.shields.io/badge/sops-2F3640?style=flat-square) ![Tailscale](https://img.shields.io/badge/Tailscale-242424?style=flat-square&logo=tailscale&logoColor=white) ![Windows 11](https://img.shields.io/badge/Windows_11-0078D4?style=flat-square&logo=windows&logoColor=white)
 
 **IA** ![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white) ![LiteLLM](https://img.shields.io/badge/LiteLLM-4B0082?style=flat-square) ![Dify](https://img.shields.io/badge/Dify-1C64F2?style=flat-square) ![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white) ![Obsidian](https://img.shields.io/badge/Obsidian-7C3AED?style=flat-square&logo=obsidian&logoColor=white)
 
