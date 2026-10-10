@@ -5,29 +5,11 @@ L'IA est au centre de ma façon de travailler : je monte avec elle ce qui doit t
 
 ---
 
-<img src="assets/architecture.jpg" alt="Workflow de développement (spec, run autonome, porte de tests, relecture, ship) et architecture du homelab Proxmox" width="100%">
-
 ### 🤖 Mon atelier IA
 
 Une session Claude Code tourne en permanence sur mon serveur. Je la pilote depuis le PC ou le téléphone, elle écrit les cahiers des charges avec moi, lance des agents autonomes, relit leur travail et publie.
 
-<details>
-<summary>Le flux en version texte</summary>
-
-```mermaid
-flowchart LR
-  me(["👤 Moi<br/>PC · téléphone"]) -- "discussion cadrée" --> brain["🧠 Session cerveau<br/>Claude Code · Opus<br/>toujours allumée"]
-  vault[("📚 Mémoire<br/>vault Obsidian")] <-.-> brain
-  brain -- "cahier des charges" --> run["⚙️ Run autonome<br/>agent sans droit de commit"]
-  run --> gate{"🚦 Porte<br/>mécanique"}
-  gate -- "rouge" --> run
-  gate -- "vert" --> review["🔍 Relecture<br/>à froid"]
-  review --> ship["🚀 ship<br/>scan secrets · validateurs<br/>1 commit = 1 retour arrière"]
-  ship --> notif["📱 Notif"]
-  ship --> gh["GitHub"]
-```
-
-</details>
+<img src="assets/workflow.jpg" alt="Workflow : moi, session cerveau, cahier des charges, run autonome, porte de tests, relecture à froid, ship, GitHub et notification" width="100%">
 
 - **Agents encadrés** — une run autonome ne peut ni committer ni se déclarer « finie » si la porte de tests est rouge ; kill-switch, une run à la fois
 - **Un humain au bon endroit** — rien ne part sans mon « go » ; la publication suit une politique écrite par projet
@@ -41,38 +23,7 @@ flowchart LR
 
 ### 🧱 Le homelab
 
-<details>
-<summary>Le homelab en version texte</summary>
-
-```mermaid
-flowchart LR
-  user(["👤 Utilisateurs"]) --> cf["☁️ Cloudflare<br/>tunnel + Zero Trust"]
-  admin(["🛠️ Moi · admin<br/>PC · téléphone"]) -. "Tailscale<br/>mesh WireGuard" .-> pve
-  cf --> apps
-
-  subgraph pve["🖥️ Proxmox — nœud unique"]
-    direction TB
-    subgraph prod["VM services · Debian · durcie"]
-      llm["Passerelle LLM<br/>LiteLLM"]
-      db[("PostgreSQL")]
-      apps["💤 Apps web + API<br/>Dify · n8n<br/>(en veille)"]
-    end
-    lab["VM lab · Debian"]
-    win["VM build · Windows 11"]
-    fut["🔨 À venir<br/>Zones cloisonnées · firewall<br/>AD / GPO · supervision · lab cyber"]
-  end
-
-  prod -- "restic, restauration testée" --> bk[("🔒 Sauvegardes<br/>chiffrées hors site")]
-  pve -- "vzdump chiffré" --> bk
-  prod -. "santé · intégrité · audit" .-> phone["📱 Alertes"]
-
-  classDef todo stroke-dasharray: 5 5,fill:none
-  classDef sleep stroke-dasharray: 3 3,fill:#eeeeee,color:#777777
-  class fut todo
-  class apps sleep
-```
-
-</details>
+<img src="assets/homelab.jpg" alt="Architecture du homelab : Cloudflare et Tailscale vers Proxmox, VM services, lab et build Windows, sauvegardes chiffrées hors site, alertes" width="100%">
 
 - **Publication par tunnel sortant** — Cloudflare Tunnel + Zero Trust Access devant chaque service, pas de redirection de port
 - **Administration à distance par réseau privé** — Tailscale (mesh WireGuard) entre PC, téléphone, hyperviseur et serveur
