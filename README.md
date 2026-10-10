@@ -54,13 +54,14 @@ Première décision sur la table : Tailscale passe par-dessus tout cloisonnement
 <!-- vitrine:projets:debut -->
 | | Projet | Ce que c'est | État |
 |---|---|---|---|
-| 🧱 | **socle** | Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber | ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square) |
-| 🎓 | **Formation AIS** | Préparation du titre RNCP37680, suivi de progression maison | ![démarrage déc. 2026](https://img.shields.io/badge/démarrage_déc._2026-58a6ff?style=flat-square) |
 | 🎮 | **ColdBoot** | Jeu de hacking narratif (Godot), façon Uplink / Hacknet — construit par agents autonomes | ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square) |
+| 🎯 | **Tarkov Overlay** | Overlay PVE pour Escape from Tarkov : quêtes, planque, prix | ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square) |
+| 🧱 | **socle** | Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber | ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square) |
+| 🎓 | **Formation AIS** | Préparation du titre RNCP37680, suivi de progression maison | ![démarrage déc. 2026](https://img.shields.io/badge/d%C3%A9marrage_d%C3%A9c._2026-f0883e?style=flat-square) |
 | 🗣️ | **AcademIA** | Apprentissage des langues piloté par LLM, pédagogie adaptative | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 | 🏎️ | **RaceIA** | Ingénieur de course IA pour Assetto Corsa : télémétrie, analyse des virages, briefing | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
-| 🐉 | **MJIA** | Copilote IA de maître du jeu D&D 5e sur Foundry VTT auto-hébergé | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 | ✅ | **Eisenday** | App mobile de productivité (matrice d'Eisenhower), 13 langues | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
+| 🐉 | **MJIA** | Copilote IA de maître du jeu D&D 5e sur Foundry VTT auto-hébergé | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 <!-- vitrine:projets:fin -->
 
 📈 **[Suivi détaillé des projets](SUIVI.md)** — versions, nouveautés et activité, mis à jour automatiquement chaque lundi.
