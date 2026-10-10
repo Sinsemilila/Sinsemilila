@@ -27,6 +27,9 @@ flowchart LR
 - **Mémoire longue** — vault Obsidian synchronisé sur mes appareils, lu par un sous-agent léger pour ne pas saturer le contexte
 - **Garde-fous automatiques** — hooks : scan de secrets, plan écrit obligatoire avant de toucher la sécurité ou les migrations
 - **Bon modèle au bon poste** — le plus petit modèle qui ne fera pas recommencer : gros modèle pour le jugement, petit pour l'extraction
+- **Boucles autonomes bridées** — une veille IA hebdomadaire tourne seule : lecture web uniquement, écrit dans le vault, modèle économique, kill-switch
+- **Bibliothèque** — 110+ fiches de lecture et synthèses de recherche, ingérées depuis des PDF, consultables par les agents
+- **Poste de travail** — PC Windows double écran, VM Windows 11 pilotée depuis le serveur pour tester les builds, session principale joignable depuis le téléphone
 - **Passerelle LLM maison** — LiteLLM devant plusieurs fournisseurs, orchestration Dify et n8n pour les apps
 
 ### 🧱 Le homelab
@@ -34,17 +37,15 @@ flowchart LR
 ```mermaid
 flowchart LR
   user(["👤 Utilisateurs"]) --> cf["☁️ Cloudflare<br/>tunnel + Zero Trust"]
-  cf --> svc
   admin(["🛠️ Moi · admin<br/>PC · téléphone"]) -. "Tailscale<br/>mesh WireGuard" .-> pve
+  cf --> apps
 
   subgraph pve["🖥️ Proxmox — nœud unique"]
     direction TB
-    subgraph prod["VM services · Debian"]
-      svc["Apps web + API<br/>(Docker)"]
-      ia["Orchestration IA<br/>LiteLLM · Dify · n8n"]
+    subgraph prod["VM services · Debian · durcie"]
+      llm["Passerelle LLM<br/>LiteLLM"]
       db[("PostgreSQL")]
-      svc --- ia
-      svc --- db
+      apps["💤 Apps web + API<br/>Dify · n8n<br/>(en veille)"]
     end
     lab["VM lab · Debian"]
     win["VM build · Windows 11"]
@@ -53,13 +54,15 @@ flowchart LR
 
   prod -- "restic, restauration testée" --> bk[("🔒 Sauvegardes<br/>chiffrées hors site")]
   pve -- "vzdump chiffré" --> bk
-  prod -. "tests de santé" .-> phone["📱 Alertes"]
+  prod -. "santé · intégrité · audit" .-> phone["📱 Alertes"]
 
   classDef todo stroke-dasharray: 5 5,fill:none
+  classDef sleep stroke-dasharray: 3 3,fill:#eeeeee,color:#777777
   class fut todo
+  class apps sleep
 ```
 
-- **Exposition sans port ouvert** — tunnel Cloudflare + Zero Trust Access devant chaque service
+- **Publication par tunnel sortant** — Cloudflare Tunnel + Zero Trust Access devant chaque service, pas de redirection de port
 - **Administration à distance par réseau privé** — Tailscale (mesh WireGuard) entre PC, téléphone, hyperviseur et serveur
 - **Sauvegardes vérifiées, pas supposées** — restic avec test de restauration automatique, copie froide, sauvegardes de VM chiffrées hors site
 - **Secrets hors du code** — chiffrés (sops), et chaque commit passe un détecteur de secrets
@@ -68,6 +71,20 @@ flowchart LR
 
 **En construction — `socle`**, selon quatre règles : les frontières réseau sont *appliquées*, pas supposées · tout est *reconstructible*, et ça a été prouvé · on sait que c'est cassé *avant* l'utilisateur · chaque décision est écrite, le *pourquoi* plutôt que le *quoi*.
 Première décision sur la table : Tailscale passe par-dessus tout cloisonnement — son statut se tranche *avant* de poser les zones, pas après.
+
+### 🛡️ Sécurité
+
+**Sur le serveur**
+- SSH par clé uniquement, port non standard · fail2ban · pare-feu ufw · mises à jour de sécurité automatiques
+- **auditd**, **AIDE** (intégrité des fichiers, contrôle hebdo) et **Lynis** (audit système hebdo) — alertes sur téléphone
+- Conteneurs durcis (capabilities réduites au strict nécessaire), socket Docker derrière un proxy
+- **Bac à sable** pour tout code tiers : système de fichiers isolé, sorties réseau sur liste blanche
+
+**Dans les applications** (AcademIA)
+- Sessions opaques Redis + CSRF, mots de passe Argon2id, CSP en mode bloquant, MFA TOTP (secret chiffré au repos)
+- LLM : nettoyage des données personnelles, isolation entre utilisateurs, limites de débit et de coût
+- Cloudflare : WAF, HSTS, DMARC · dépendances surveillées (Dependabot + audit en CI)
+- **RGPD** : analyse d'impact, registre des traitements, endpoints de demande d'accès et d'effacement
 
 ### 📦 Projets
 
@@ -79,6 +96,7 @@ Première décision sur la table : Tailscale passe par-dessus tout cloisonnement
 | 🗣️ | **AcademIA** | Apprentissage des langues piloté par LLM, pédagogie adaptative | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 | 🏎️ | **RaceIA** | Ingénieur de course IA pour Assetto Corsa : télémétrie, analyse des virages, briefing | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 | 🐉 | **MJIA** | Copilote IA de maître du jeu D&D 5e sur Foundry VTT auto-hébergé | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
+| ✅ | **Eisenday** | App mobile de productivité (matrice d'Eisenhower), 13 langues | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 
 ### 🛠 Outils
 
