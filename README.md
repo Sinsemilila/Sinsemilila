@@ -9,7 +9,7 @@ L'IA est au centre de ma façon de travailler : je monte avec elle ce qui doit t
 
 Une session Claude Code tourne en permanence sur mon serveur. Je la pilote depuis le PC ou le téléphone, elle écrit les cahiers des charges avec moi, lance des agents autonomes, relit leur travail et publie.
 
-<img src="assets/workflow.jpg" alt="Workflow : moi, session cerveau, cahier des charges, run autonome, porte de tests, relecture à froid, ship, GitHub et notification" width="100%">
+<img src="assets/workflow.png" alt="Workflow : moi, session cerveau, cahier des charges, run autonome, porte de tests, relecture à froid, ship, GitHub et notification" width="100%">
 
 - **Agents encadrés** — une run autonome ne peut ni committer ni se déclarer « finie » si la porte de tests est rouge ; kill-switch, une run à la fois
 - **Un humain au bon endroit** — rien ne part sans mon « go » ; la publication suit une politique écrite par projet
@@ -23,7 +23,7 @@ Une session Claude Code tourne en permanence sur mon serveur. Je la pilote depui
 
 ### 🧱 Le homelab
 
-<img src="assets/homelab.jpg" alt="Architecture du homelab : Cloudflare et Tailscale vers Proxmox, VM services, lab et build Windows, sauvegardes chiffrées hors site, alertes" width="100%">
+<img src="assets/homelab.png" alt="Architecture du homelab : Cloudflare et Tailscale vers Proxmox, VM services, lab et build Windows, sauvegardes chiffrées hors site, alertes" width="100%">
 
 - **Publication par tunnel sortant** — Cloudflare Tunnel + Zero Trust Access devant chaque service, pas de redirection de port
 - **Administration à distance par réseau privé** — Tailscale (mesh WireGuard) entre PC, téléphone, hyperviseur et serveur
