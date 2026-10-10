@@ -1,11 +1,35 @@
-## Clément Segura
+<img src="assets/banner.svg" alt="Clément Segura — Infra · Sécurité · IA" width="100%">
 
-**En reconversion vers l'administration d'infrastructures sécurisées.**
-Titre pro RNCP37680 (Administrateur d'Infrastructures Sécurisées) — formation à partir de décembre 2026.
+**En reconversion vers l'administration d'infrastructures sécurisées** — titre pro RNCP37680, formation à partir de décembre 2026.
+L'IA est au centre de ma façon de travailler : je monte avec elle ce qui doit tourner, puis je le décortique jusqu'à savoir expliquer chaque brique.
 
-J'apprends en construisant : un homelab qui tourne en vrai, documenté décision par décision.
+---
 
-### 🧱 Ce qui tourne aujourd'hui
+### 🤖 Mon atelier IA
+
+Une session Claude Code tourne en permanence sur mon serveur. Je la pilote depuis le PC ou le téléphone, elle écrit les cahiers des charges avec moi, lance des agents autonomes, relit leur travail et publie.
+
+```mermaid
+flowchart LR
+  me(["👤 Moi<br/>PC · téléphone"]) -- "discussion cadrée" --> brain["🧠 Session cerveau<br/>Claude Code · Opus<br/>toujours allumée"]
+  vault[("📚 Mémoire<br/>vault Obsidian")] <-.-> brain
+  brain -- "cahier des charges" --> run["⚙️ Run autonome<br/>agent sans droit de commit"]
+  run --> gate{"🚦 Porte<br/>mécanique"}
+  gate -- "rouge" --> run
+  gate -- "vert" --> review["🔍 Relecture<br/>à froid"]
+  review --> ship["🚀 ship<br/>scan secrets · validateurs<br/>1 commit = 1 retour arrière"]
+  ship --> notif["📱 Notif"]
+  ship --> gh["GitHub"]
+```
+
+- **Agents encadrés** — une run autonome ne peut ni committer ni se déclarer « finie » si la porte de tests est rouge ; kill-switch, une run à la fois
+- **Un humain au bon endroit** — rien ne part sans mon « go » ; la publication suit une politique écrite par projet
+- **Mémoire longue** — vault Obsidian synchronisé sur mes appareils, lu par un sous-agent léger pour ne pas saturer le contexte
+- **Garde-fous automatiques** — hooks : scan de secrets, plan écrit obligatoire avant de toucher la sécurité ou les migrations
+- **Bon modèle au bon poste** — le plus petit modèle qui ne fera pas recommencer : gros modèle pour le jugement, petit pour l'extraction
+- **Passerelle LLM maison** — LiteLLM devant plusieurs fournisseurs, orchestration Dify et n8n pour les apps
+
+### 🧱 Le homelab
 
 ```mermaid
 flowchart LR
@@ -34,34 +58,32 @@ flowchart LR
   class fut todo
 ```
 
-Un hyperviseur Proxmox à la maison, qui porte mes services au quotidien :
-
 - **Exposition sans port ouvert** — tunnel Cloudflare + Zero Trust Access devant chaque service
 - **Sauvegardes vérifiées, pas supposées** — restic avec test de restauration automatique, copie froide, sauvegardes de VM chiffrées hors site
-- **Secrets hors du code** — chiffrés (sops), et chaque commit passe un détecteur de secrets avant de partir
+- **Secrets hors du code** — chiffrés (sops), et chaque commit passe un détecteur de secrets
 - **Supervision** — tests de santé planifiés (timers systemd), alertes sur téléphone
 - **Procédures de reprise écrites** — et déjà utilisées sur incident réel
 
-### 🔨 En construction — `socle`
+**En construction — `socle`**, selon quatre règles : les frontières réseau sont *appliquées*, pas supposées · tout est *reconstructible*, et ça a été prouvé · on sait que c'est cassé *avant* l'utilisateur · chaque décision est écrite, le *pourquoi* plutôt que le *quoi*.
 
-Refonte du homelab selon quatre règles :
-1. Les frontières entre zones réseau sont **appliquées**, pas supposées
-2. Tout est **reconstructible**, et ça a été prouvé au moins une fois
-3. On sait que c'est cassé **avant** l'utilisateur
-4. Chaque décision est écrite — le *pourquoi*, pas le *quoi*
+### 📦 Projets
 
-Prochaines étapes : cloisonnement réseau, VM Windows (AD, GPO), stack de supervision, terrain d'exercice cyber.
+| | Projet | Ce que c'est | État |
+|---|---|---|---|
+| 🧱 | **socle** | Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber | ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square) |
+| 🎓 | **Formation AIS** | Préparation du titre RNCP37680, suivi de progression maison | ![démarrage déc. 2026](https://img.shields.io/badge/démarrage_déc._2026-58a6ff?style=flat-square) |
+| 🎮 | **ColdBoot** | Jeu de hacking narratif (Godot), façon Uplink / Hacknet — construit par agents autonomes | ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square) |
+| 🗣️ | **AcademIA** | Apprentissage des langues piloté par LLM, pédagogie adaptative | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
+| 🏎️ | **RaceIA** | Ingénieur de course IA pour Assetto Corsa : télémétrie, analyse des virages, briefing | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
+| 🐉 | **MJIA** | Copilote IA de maître du jeu D&D 5e sur Foundry VTT auto-hébergé | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 
-### 🎮 À côté
+### 🛠 Outils
 
-- **ColdBoot** — jeu de hacking narratif (Godot), dans la lignée d'Uplink / Hacknet
-- **AcademIA** — plateforme d'apprentissage des langues pilotée par LLM (en pause)
+**Infra** ![Proxmox](https://img.shields.io/badge/Proxmox-E57000?style=flat-square&logo=proxmox&logoColor=white) ![Debian](https://img.shields.io/badge/Debian-A81D33?style=flat-square&logo=debian&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Cloudflare Zero Trust](https://img.shields.io/badge/Cloudflare_Zero_Trust-F38020?style=flat-square&logo=cloudflare&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![restic](https://img.shields.io/badge/restic-2F3640?style=flat-square) ![sops](https://img.shields.io/badge/sops-2F3640?style=flat-square) ![Windows 11](https://img.shields.io/badge/Windows_11-0078D4?style=flat-square&logo=windows&logoColor=white)
 
-### 🤖 Méthode
+**IA** ![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white) ![LiteLLM](https://img.shields.io/badge/LiteLLM-4B0082?style=flat-square) ![Dify](https://img.shields.io/badge/Dify-1C64F2?style=flat-square) ![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white) ![Obsidian](https://img.shields.io/badge/Obsidian-7C3AED?style=flat-square&logo=obsidian&logoColor=white)
 
-Je monte avec l'IA (Claude Code) l'infrastructure dont la formation a besoin, puis je la décortique :
-chaque brique tourne vraiment, et je dois savoir expliquer pourquoi elle est là et comment elle tient.
-Garde-fous : un commit = une unité annulable, décisions écrites (ADR), contrôles automatiques avant chaque publication.
+**Dev** ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white) ![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=flat-square&logo=svelte&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) ![Godot](https://img.shields.io/badge/Godot-478CBF?style=flat-square&logo=godotengine&logoColor=white)
 
 ### 📍 Contact
 
