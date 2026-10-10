@@ -1,67 +1,41 @@
-## Hey 👋
+## Clément Segura
 
-I'm Sinse — solo dev building **AI-powered tools** on self-hosted infrastructure.
+**En reconversion vers l'administration d'infrastructures sécurisées.**
+Titre pro RNCP37680 (Administrateur d'Infrastructures Sécurisées) — formation à partir de décembre 2026.
 
-Transition Admin Infra Sécurisée (PTP, déc 2026). Building in the open as I go.
+J'apprends en construisant : un homelab qui tourne en vrai, documenté décision par décision.
 
-### 🌐 petit-pont.com — multi-app AI ecosystem
+### 🧱 Ce qui tourne aujourd'hui
 
-Self-hosted on Proxmox + Cloudflare Zero Trust. 5 apps live, isolated per-domain with email policies, all running on a shared LiteLLM proxy + Dify orchestration.
+Un hyperviseur Proxmox à la maison, qui porte mes services au quotidien :
 
-| Domain | App | Stack | Status |
-|---|---|---|---|
-| `academia.petit-pont.com` | **AcademIA** — adaptive language learning (EN/ES, soon IT/DE/JP/RU) | SvelteKit + FastAPI + Dify + Postgres | Live |
-| `marie.petit-pont.com` | **Maître Comptable** — Q&A omniscient compta + RAG 22 PDFs (Qdrant) | SvelteKit + FastAPI + Dify advanced-chat | Live |
-| `coach.petit-pont.com` | **Coach Sportif** — V0.1 Q&A muscu, V0.2+ tracking + programmes + nutrition | SvelteKit + FastAPI + Dify chat | Live (V0.1) |
-| `sinse.petit-pont.com` | **Self-learn** placeholder | TBD | Reserved |
-| `petit-pont.com` (apex) | Public landing | Static | Live |
+- **Exposition sans port ouvert** — tunnel Cloudflare + Zero Trust Access devant chaque service
+- **Sauvegardes vérifiées, pas supposées** — restic avec test de restauration automatique, copie froide, sauvegardes de VM chiffrées hors site
+- **Secrets hors du code** — chiffrés (sops), et chaque commit passe un détecteur de secrets avant de partir
+- **Supervision** — tests de santé planifiés (timers systemd), alertes sur téléphone
+- **Procédures de reprise écrites** — et déjà utilisées sur incident réel
 
-### 🚀 Flagship — [AcademIA](https://github.com/Sinsemilila/academIA)
+### 🔨 En construction — `socle`
 
-AI language learning platform — adaptive lessons powered by 5+ LLMs (Groq, Mistral, OpenAI, Gemini via LiteLLM proxy). Multi-agent Dify chatflows (Teacher EN/ES + Maestro), real-time error detection w/ deterministic Lyster-style rules engine, oracle harness multi-judge cross-provider (κ Opus 0.85+), behavior-adaptive pedagogy, CECRL exams (Cambridge style + DELE/CILS/JLPT/TORFL roadmap Wave 2-4), gamification.
+Refonte du homelab selon quatre règles :
+1. Les frontières entre zones réseau sont **appliquées**, pas supposées
+2. Tout est **reconstructible**, et ça a été prouvé au moins une fois
+3. On sait que c'est cassé **avant** l'utilisateur
+4. Chaque décision est écrite — le *pourquoi*, pas le *quoi*
 
-**~70 sessions of solo dev, ~170 architectural locks, ADRs all the way down.** SvelteKit + FastAPI + n8n + PostgreSQL (PgBouncer transaction-mode) + Qdrant.
+Prochaines étapes : cloisonnement réseau, VM Windows (AD, GPO), stack de supervision, terrain d'exercice cyber.
 
-### 🛠 Tech stack
+### 🎮 À côté
 
-![SvelteKit](https://img.shields.io/badge/-SvelteKit_5-FF3E00?logo=svelte&logoColor=white&style=flat-square)
-![Tailwind](https://img.shields.io/badge/-Tailwind_v4-06B6D4?logo=tailwindcss&logoColor=white&style=flat-square)
-![FastAPI](https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white&style=flat-square)
-![Python](https://img.shields.io/badge/-Python_3.13-3776AB?logo=python&logoColor=white&style=flat-square)
-![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=flat-square)
-![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white&style=flat-square)
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?logo=postgresql&logoColor=white&style=flat-square)
-![Qdrant](https://img.shields.io/badge/-Qdrant-DC382D?logoColor=white&style=flat-square)
-![Dify](https://img.shields.io/badge/-Dify-1C64F2?logoColor=white&style=flat-square)
-![n8n](https://img.shields.io/badge/-n8n-EA4B71?logo=n8n&logoColor=white&style=flat-square)
-![LiteLLM](https://img.shields.io/badge/-LiteLLM-4B0082?style=flat-square)
-![Cloudflare](https://img.shields.io/badge/-Cloudflare_Zero_Trust-F38020?logo=cloudflare&logoColor=white&style=flat-square)
-![Proxmox](https://img.shields.io/badge/-Proxmox-E57000?logo=proxmox&logoColor=white&style=flat-square)
+- **ColdBoot** — jeu de hacking narratif (Godot), dans la lignée d'Uplink / Hacknet
+- **AcademIA** — plateforme d'apprentissage des langues pilotée par LLM (en pause)
 
-### 🤖 How I work
+### 🤖 Méthode
 
-I build with **Claude Code (Opus 4.7, 1M context)** — heavy custom workflow toolkit :
-
-- `ship` (granular commits + auto-push + secret pre-check)
-- `safepoint` (rollback checkpoints), `decision` (atomic ADRs)
-- `/handoff` (auto-detect projets touchés, vault writes per-app)
-- `/project <app>` (deep load context per-app one-shot)
-- Custom subagent `vault-reader` (Haiku 4.5) for cross-project knowledge retrieval (~74% token savings vs raw vault load)
-- Pedagogy reviewer + Dify patcher subagents
-
-Vault Obsidian + Syncthing 3 devices for personal knowledge graph.
-
-### 📦 Apps & repos
-
-| App | Repos | Domain |
-|---|---|---|
-| **AcademIA** | [academIA](https://github.com/Sinsemilila/academIA) (public) | academia.petit-pont.com |
-| **Marie** (Maître Comptable) | marie + marie-api (private) | marie.petit-pont.com |
-| **Coach** (Coach Sportif) | coach + coach-api (private) | coach.petit-pont.com |
-| **Eisenday** | [Eisenday-app](https://github.com/Sinsemilila/Eisenday-app) (private) | mobile-first SvelteKit + Capacitor + i18n 13 langues |
-| **petit-pont-infra** | private — shared infra (CF + nginx + sops bundle) | cross-app |
-| **petit-pont-ui** | private — shared UI components Svelte | cross-app |
+Je monte avec l'IA (Claude Code) l'infrastructure dont la formation a besoin, puis je la décortique :
+chaque brique tourne vraiment, et je dois savoir expliquer pourquoi elle est là et comment elle tient.
+Garde-fous : un commit = une unité annulable, décisions écrites (ADR), contrôles automatiques avant chaque publication.
 
 ### 📍 Contact
 
-`sinseproduction@gmail.com` · Montpellier, France 🇫🇷
+`sinseproduction@gmail.com` · Sardan (Gard) — bassin montpelliérain
