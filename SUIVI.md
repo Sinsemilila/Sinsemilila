@@ -8,29 +8,29 @@ Mis à jour le 19/10/2026
 
 Jeu de hacking narratif (Godot), façon Uplink / Hacknet — construit par agents autonomes
 
-- **Dernière version** : 0.26.0 (19/10/2026)
+- **Dernière version** : 0.27.0 (19/10/2026)
 - **Dernier commit** : 19/10/2026
-- **Activité** : 345 commits sur 7 j · 609 sur 30 j
+- **Activité** : 379 commits sur 7 j · 643 sur 30 j
 
 **Nouveautés**
 
+- son sobre façon Hacknet, prologue refait, le son du réveil et du salon
 - tutoriels refaits, 12 familles de contrats, nouvelles commandes, sauvegardes migrées
 - pare-feu, journaux façon Hacknet, carnet de notes, pages d'accueil, visionneuse de fichiers
-- commandes façon Hacknet, ports et porthack, la RAM c'est toi, trace au premier geste hostile
 
 ## 🧱 socle ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square)
 
 Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber
 
-- **Dernière version** : 0.78.1 (19/10/2026)
+- **Dernière version** : 0.81.3 (19/10/2026)
 - **Dernier commit** : 19/10/2026
-- **Activité** : 564 commits sur 7 j · 744 sur 30 j
+- **Activité** : 593 commits sur 7 j · 773 sur 30 j
 
 **Nouveautés**
 
-- brique 12d-1, correctif load_feed (épreuve réelle
-- brique 12d-1, moteur de scan Greenbone
-- brique 12a, poste offensif Kali
+- brique 12e, durcissement d'hygiène wazuhlab (post-épreuve 225)
+- brique 12a, correctif d'épreuve : sshd de l'image Kali
+- brique 12e, correctifs d'épreuve : disque et prérequis de l'install Wazuh
 
 ## 🎓 Formation AIS ![démarrage déc. 2026](https://img.shields.io/badge/d%C3%A9marrage_d%C3%A9c._2026-f0883e?style=flat-square)
 
@@ -39,7 +39,7 @@ Préparation du titre RNCP37680, suivi de progression maison
 - **Dernier commit** : 16/10/2026
 - **Activité** : 2 commits sur 7 j · 18 sur 30 j
 
-## 🐉 MJIA ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
+## 🐉 MJIA ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square)
 
 Copilote IA de maître du jeu D&D 5e sur Foundry VTT auto-hébergé
 
@@ -92,8 +92,8 @@ App mobile de productivité (matrice d'Eisenhower), 13 langues
 
 | Projet | Versions (30 j) | Taux d'échec (%) | Réparation |
 |---|---|---|---|
-| ColdBoot | 27 | 33 | 2 h |
-| socle | 81 | 51 | 1 h |
+| ColdBoot | 28 | 32 | 2 h |
+| socle | 87 | 51 | 1 h |
 | Tarkov Overlay | 40 | 72 | 10 min |
 | RaceIA | 0 | — | — |
 
