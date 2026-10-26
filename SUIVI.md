@@ -1,6 +1,6 @@
 # Suivi des projets
 
-Mis à jour le 19/10/2026
+Mis à jour le 26/10/2026
 
 5 actifs · 0 calme · 3 en pause
 
@@ -8,51 +8,51 @@ Mis à jour le 19/10/2026
 
 Jeu de hacking narratif (Godot), façon Uplink / Hacknet — construit par agents autonomes
 
-- **Dernière version** : 0.27.0 (19/10/2026)
-- **Dernier commit** : 19/10/2026
-- **Activité** : 379 commits sur 7 j · 643 sur 30 j
+- **Dernière version** : 0.33.0 (22/10/2026)
+- **Dernier commit** : 25/10/2026
+- **Activité** : 192 commits sur 7 j · 844 sur 30 j
 
 **Nouveautés**
 
-- son sobre façon Hacknet, prologue refait, le son du réveil et du salon
-- tutoriels refaits, 12 familles de contrats, nouvelles commandes, sauvegardes migrées
-- pare-feu, journaux façon Hacknet, carnet de notes, pages d'accueil, visionneuse de fichiers
+- L'alerte d'une visite reste à la machine visitée
+- Visite surveillée, T2 exige le rapatriement
+- Outils façon Hacknet, tuto en quatre contrats
 
 ## 🧱 socle ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square)
 
 Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber
 
-- **Dernière version** : 0.81.3 (19/10/2026)
-- **Dernier commit** : 19/10/2026
-- **Activité** : 593 commits sur 7 j · 773 sur 30 j
+- **Dernière version** : 0.86.0 (20/10/2026)
+- **Dernier commit** : 25/10/2026
+- **Activité** : 140 commits sur 7 j · 913 sur 30 j
 
 **Nouveautés**
 
-- brique 12e, durcissement d'hygiène wazuhlab (post-épreuve 225)
-- brique 12a, correctif d'épreuve : sshd de l'image Kali
-- brique 12e, correctifs d'épreuve : disque et prérequis de l'install Wazuh
+- brique 12b, peuplement automatique de DVWA
+- brique 12c-2c, durcissement adlab (détection + idempotence + non-fuite)
+- brique 12c-2b, failles AD semées dans atelier.lab
 
 ## 🎓 Formation AIS ![démarrage déc. 2026](https://img.shields.io/badge/d%C3%A9marrage_d%C3%A9c._2026-f0883e?style=flat-square)
 
 Préparation du titre RNCP37680, suivi de progression maison
 
-- **Dernier commit** : 16/10/2026
-- **Activité** : 2 commits sur 7 j · 18 sur 30 j
+- **Dernier commit** : 23/10/2026
+- **Activité** : 9 commits sur 7 j · 22 sur 30 j
 
 ## 🐉 MJIA ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square)
 
 Copilote IA de maître du jeu D&D 5e sur Foundry VTT auto-hébergé
 
-- **Dernier commit** : 12/10/2026
-- **Activité** : 0 commit sur 7 j · 3 sur 30 j
+- **Dernier commit** : 23/10/2026
+- **Activité** : 161 commits sur 7 j · 164 sur 30 j
 
 ## 🎯 Tarkov Overlay ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
 
 Overlay PVE pour Escape from Tarkov : quêtes, planque, prix
 
 - **Dernière version** : 0.13.0 (05/10/2026)
-- **Dernier commit** : 12/10/2026
-- **Activité** : 0 commit sur 7 j · 276 sur 30 j
+- **Dernier commit** : 19/10/2026
+- **Activité** : 0 commit sur 7 j · 278 sur 30 j
 
 **Nouveautés**
 
@@ -92,8 +92,8 @@ App mobile de productivité (matrice d'Eisenhower), 13 langues
 
 | Projet | Versions (30 j) | Taux d'échec (%) | Réparation |
 |---|---|---|---|
-| ColdBoot | 28 | 32 | 2 h |
-| socle | 87 | 51 | 1 h |
+| ColdBoot | 34 | 35 | 5 h |
+| socle | 92 | 49 | 1 h |
 | Tarkov Overlay | 40 | 72 | 10 min |
 | RaceIA | 0 | — | — |
 
