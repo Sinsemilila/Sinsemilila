@@ -1,30 +1,16 @@
 # Suivi des projets
 
-Mis à jour le 26/10/2026
+Mis à jour le 02/11/2026
 
-5 actifs · 0 calme · 3 en pause
-
-## 🎮 ColdBoot ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
-
-Jeu de hacking narratif (Godot), façon Uplink / Hacknet — construit par agents autonomes
-
-- **Dernière version** : 0.33.0 (22/10/2026)
-- **Dernier commit** : 25/10/2026
-- **Activité** : 192 commits sur 7 j · 844 sur 30 j
-
-**Nouveautés**
-
-- L'alerte d'une visite reste à la machine visitée
-- Visite surveillée, T2 exige le rapatriement
-- Outils façon Hacknet, tuto en quatre contrats
+4 actifs · 1 calme · 3 en pause
 
 ## 🧱 socle ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square)
 
 Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber
 
 - **Dernière version** : 0.86.0 (20/10/2026)
-- **Dernier commit** : 25/10/2026
-- **Activité** : 140 commits sur 7 j · 913 sur 30 j
+- **Dernier commit** : 01/11/2026
+- **Activité** : 228 commits sur 7 j · 1164 sur 30 j
 
 **Nouveautés**
 
@@ -32,27 +18,41 @@ Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber
 - brique 12c-2c, durcissement adlab (détection + idempotence + non-fuite)
 - brique 12c-2b, failles AD semées dans atelier.lab
 
+## 🎮 ColdBoot ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
+
+Jeu de hacking narratif (Godot), façon Uplink / Hacknet — construit par agents autonomes
+
+- **Dernière version** : 0.33.0 (22/10/2026)
+- **Dernier commit** : 27/10/2026
+- **Activité** : 2 commits sur 7 j · 847 sur 30 j
+
+**Nouveautés**
+
+- L'alerte d'une visite reste à la machine visitée
+- Visite surveillée, T2 exige le rapatriement
+- Outils façon Hacknet, tuto en quatre contrats
+
 ## 🎓 Formation AIS ![démarrage déc. 2026](https://img.shields.io/badge/d%C3%A9marrage_d%C3%A9c._2026-f0883e?style=flat-square)
 
 Préparation du titre RNCP37680, suivi de progression maison
 
 - **Dernier commit** : 23/10/2026
-- **Activité** : 9 commits sur 7 j · 22 sur 30 j
+- **Activité** : 0 commit sur 7 j · 22 sur 30 j
 
 ## 🐉 MJIA ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square)
 
 Copilote IA de maître du jeu D&D 5e sur Foundry VTT auto-hébergé
 
 - **Dernier commit** : 23/10/2026
-- **Activité** : 161 commits sur 7 j · 164 sur 30 j
+- **Activité** : 0 commit sur 7 j · 164 sur 30 j
 
-## 🎯 Tarkov Overlay ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
+## 🎯 Tarkov Overlay ![calme](https://img.shields.io/badge/calme-d29922?style=flat-square)
 
 Overlay PVE pour Escape from Tarkov : quêtes, planque, prix
 
 - **Dernière version** : 0.13.0 (05/10/2026)
 - **Dernier commit** : 19/10/2026
-- **Activité** : 0 commit sur 7 j · 278 sur 30 j
+- **Activité** : 0 commit sur 7 j · 65 sur 30 j
 
 **Nouveautés**
 
@@ -92,9 +92,9 @@ App mobile de productivité (matrice d'Eisenhower), 13 langues
 
 | Projet | Versions (30 j) | Taux d'échec (%) | Réparation |
 |---|---|---|---|
-| ColdBoot | 34 | 35 | 5 h |
 | socle | 92 | 49 | 1 h |
-| Tarkov Overlay | 40 | 72 | 10 min |
+| ColdBoot | 34 | 35 | 5 h |
+| Tarkov Overlay | 12 | 67 | 13 min |
 | RaceIA | 0 | — | — |
 
 Versions : publiées sur les 30 derniers jours. Taux d'échec : part de ces versions suivies d'un correctif dans les 7 jours (avant la version suivante). Réparation : médiane du délai entre une version en échec et son premier correctif.
