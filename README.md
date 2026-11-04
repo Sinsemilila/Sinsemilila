@@ -11,7 +11,7 @@ Une session Claude Code tourne en permanence sur mon serveur. Je la pilote depui
 
 <img src="assets/workflow.png" alt="Workflow : moi, session cerveau, cahier des charges, run autonome, porte de tests, relecture à froid, ship, GitHub et notification" width="100%">
 
-- **Agents encadrés** — une run autonome ne peut ni committer ni se déclarer « finie » si la porte de tests est rouge ; kill-switch, une run à la fois
+- **Agents encadrés** — une run autonome ne peut ni committer ni se déclarer « finie » si la porte de tests est rouge ; kill-switch, une run à la fois par projet
 - **Un humain au bon endroit** — rien ne part sans mon « go » ; la publication suit une politique écrite par projet
 - **Mémoire longue** — vault Obsidian synchronisé sur mes appareils, lu par un sous-agent léger pour ne pas saturer le contexte
 - **Garde-fous automatiques** — hooks : scan de secrets, plan écrit obligatoire avant de toucher la sécurité ou les migrations
@@ -54,7 +54,7 @@ Une session Claude Code tourne en permanence sur mon serveur. Je la pilote depui
 
 - Sessions opaques Redis + CSRF, mots de passe Argon2id, CSP en mode bloquant, MFA TOTP (secret chiffré au repos)
 - LLM : nettoyage des données personnelles, isolation entre utilisateurs, limites de débit et de coût
-- Cloudflare : WAF, HSTS, DMARC · dépendances surveillées (Dependabot + audit en CI)
+- Cloudflare : WAF, HSTS, DMARC · audit des dépendances en CI
 - **RGPD** : analyse d'impact, registre des traitements, endpoints de demande d'accès et d'effacement
 
 ### 📦 Projets
