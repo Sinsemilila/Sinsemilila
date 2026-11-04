@@ -19,31 +19,39 @@ Une session Claude Code tourne en permanence sur mon serveur. Je la pilote depui
 - **Boucles autonomes bridées** — une veille IA hebdomadaire tourne seule : lecture web uniquement, écrit dans le vault, modèle économique, kill-switch
 - **Bibliothèque** — 110+ fiches de lecture et synthèses de recherche, ingérées depuis des PDF, consultables par les agents
 - **Poste de travail** — PC Windows double écran, VM Windows 11 pilotée depuis le serveur pour tester les builds, session principale joignable depuis le téléphone
-- **Passerelle LLM maison** — LiteLLM devant plusieurs fournisseurs, orchestration Dify et n8n pour les apps
 
 ### 🧱 Le homelab
 
-<img src="assets/homelab.png" alt="Architecture du homelab : Cloudflare et Tailscale vers Proxmox, VM services, lab et build Windows, sauvegardes chiffrées hors site, alertes" width="100%">
+<img src="assets/homelab.png" alt="Architecture du homelab : Proxmox, pare-feu OPNsense devant quatre zones (services, outils, DMZ, lab), VM d'administration sur le LAN, accès par Cloudflare Tunnel et Tailscale, sauvegardes PBS et restic chiffrées hors site, alertes" width="100%">
 
-- **Publication par tunnel sortant** — Cloudflare Tunnel + Zero Trust Access devant chaque service, pas de redirection de port
-- **Administration à distance par réseau privé** — Tailscale (mesh WireGuard) entre PC, téléphone, hyperviseur et serveur
-- **Sauvegardes vérifiées, pas supposées** — restic avec test de restauration automatique, copie froide, sauvegardes de VM chiffrées hors site
+- **Zones cloisonnées** — un pare-feu OPNsense en VM est le seul passage vers quatre zones (services, outils, DMZ, lab) ; chaque flux interdit est prouvé par un test qui doit échouer
+- **Prod réelle, lab sous cloche** — la prod ne sert que de vrais besoins et ne se casse jamais : pour l'abîmer, on la clone au lab
+- **Aucune redirection de port** — administration par Cloudflare Tunnel + Access (code à usage unique) et Tailscale (mesh WireGuard) entre PC, téléphone et serveurs
+- **Sauvegardes vérifiées, pas supposées** — Proxmox Backup Server sur disques dédiés, copies chiffrées hors site ; restic avec test de restauration automatique
+- **Supervision** — Prometheus, Alertmanager, Grafana, Loki ; alertes sur téléphone par un serveur ntfy auto-hébergé
+- **Tout en code** — modèles de VM Packer, scripts versionnés, contrôle quotidien de dérive entre l'infra réelle et le dépôt
 - **Secrets hors du code** — chiffrés (sops), et chaque commit passe un détecteur de secrets
-- **Supervision** — tests de santé planifiés (timers systemd), alertes sur téléphone
 - **Procédures de reprise écrites** — et déjà utilisées sur incident réel
 
-**En construction — `socle`**, selon quatre règles : les frontières réseau sont *appliquées*, pas supposées · tout est *reconstructible*, et ça a été prouvé · on sait que c'est cassé *avant* l'utilisateur · chaque décision est écrite, le *pourquoi* plutôt que le *quoi*.
-Première décision sur la table : Tailscale passe par-dessus tout cloisonnement — son statut se tranche *avant* de poser les zones, pas après.
+**Le lab — `socle`**, monté par agents et décortiqué brique par brique :
+
+- **Identité Windows** — forêt AD à deux contrôleurs, DHCP en basculement, GPO, LAPS, AD CS, WSUS, déploiement de logiciels, GLPI authentifié par l'AD
+- **Réseau et sécurité** — GNS3, second pare-feu relié en IPsec, Suricata en IPS, bastion Guacamole
+- **Attaque et détection** — Kali, cibles vulnérables (DVWA, Metasploitable), AD volontairement faillible, scans Greenbone, Wazuh
+- **Virtualisation et conteneurs** — cluster Proxmox imbriqué (HA, Ceph), Docker Swarm, k3s
+- **Cloud** — stockage S3 local (Garage), Terraform
+- **Recette** — tout reconstruire depuis zéro, une commande par brique (en cours)
 
 ### 🛡️ Sécurité
 
 **Sur le serveur**
+
 - SSH par clé uniquement, port non standard · fail2ban · pare-feu ufw · mises à jour de sécurité automatiques
 - **auditd**, **AIDE** (intégrité des fichiers, contrôle hebdo) et **Lynis** (audit système hebdo) — alertes sur téléphone
-- Conteneurs durcis (capabilities réduites au strict nécessaire), socket Docker derrière un proxy
 - **Bac à sable** pour tout code tiers : système de fichiers isolé, sorties réseau sur liste blanche
 
 **Dans les applications** (AcademIA)
+
 - Sessions opaques Redis + CSRF, mots de passe Argon2id, CSP en mode bloquant, MFA TOTP (secret chiffré au repos)
 - LLM : nettoyage des données personnelles, isolation entre utilisateurs, limites de débit et de coût
 - Cloudflare : WAF, HSTS, DMARC · dépendances surveillées (Dependabot + audit en CI)
@@ -71,9 +79,11 @@ Première décision sur la table : Tailscale passe par-dessus tout cloisonnement
 
 ### 🛠 Outils
 
-**Infra** ![Proxmox](https://img.shields.io/badge/Proxmox-E57000?style=flat-square&logo=proxmox&logoColor=white) ![Debian](https://img.shields.io/badge/Debian-A81D33?style=flat-square&logo=debian&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Cloudflare Zero Trust](https://img.shields.io/badge/Cloudflare_Zero_Trust-F38020?style=flat-square&logo=cloudflare&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![restic](https://img.shields.io/badge/restic-2F3640?style=flat-square) ![sops](https://img.shields.io/badge/sops-2F3640?style=flat-square) ![Tailscale](https://img.shields.io/badge/Tailscale-242424?style=flat-square&logo=tailscale&logoColor=white) ![Windows 11](https://img.shields.io/badge/Windows_11-0078D4?style=flat-square&logo=windows&logoColor=white)
+**Infra** ![Proxmox](https://img.shields.io/badge/Proxmox-E57000?style=flat-square&logo=proxmox&logoColor=white) ![Debian](https://img.shields.io/badge/Debian-A81D33?style=flat-square&logo=debian&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![OPNsense](https://img.shields.io/badge/OPNsense-D94F00?style=flat-square&logo=opnsense&logoColor=white) ![Proxmox Backup Server](https://img.shields.io/badge/Proxmox_Backup_Server-E57000?style=flat-square&logo=proxmox&logoColor=white) ![Packer](https://img.shields.io/badge/Packer-02A8EF?style=flat-square&logo=packer&logoColor=white) ![Active Directory](https://img.shields.io/badge/Active_Directory-0078D4?style=flat-square&logo=windows&logoColor=white) ![Cloudflare Zero Trust](https://img.shields.io/badge/Cloudflare_Zero_Trust-F38020?style=flat-square&logo=cloudflare&logoColor=white) ![restic](https://img.shields.io/badge/restic-2F3640?style=flat-square) ![sops](https://img.shields.io/badge/sops-2F3640?style=flat-square) ![Tailscale](https://img.shields.io/badge/Tailscale-242424?style=flat-square&logo=tailscale&logoColor=white) ![Windows 11](https://img.shields.io/badge/Windows_11-0078D4?style=flat-square&logo=windows&logoColor=white)
 
-**IA** ![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white) ![LiteLLM](https://img.shields.io/badge/LiteLLM-4B0082?style=flat-square) ![Dify](https://img.shields.io/badge/Dify-1C64F2?style=flat-square) ![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white) ![Obsidian](https://img.shields.io/badge/Obsidian-7C3AED?style=flat-square&logo=obsidian&logoColor=white)
+**Supervision et sécurité** ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white) ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white) ![Wazuh](https://img.shields.io/badge/Wazuh-3D9BF0?style=flat-square) ![Suricata](https://img.shields.io/badge/Suricata-EF7D00?style=flat-square) ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat-square&logo=kalilinux&logoColor=white)
+
+**IA** ![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white) ![Obsidian](https://img.shields.io/badge/Obsidian-7C3AED?style=flat-square&logo=obsidian&logoColor=white)
 
 **Dev** ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white) ![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?style=flat-square&logo=svelte&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) ![Godot](https://img.shields.io/badge/Godot-478CBF?style=flat-square&logo=godotengine&logoColor=white)
 
