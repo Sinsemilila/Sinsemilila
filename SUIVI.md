@@ -18,18 +18,32 @@ Jeu de hacking narratif (Godot), façon Uplink / Hacknet — construit par agent
 - Visite surveillée, T2 exige le rapatriement
 - Outils façon Hacknet, tuto en quatre contrats
 
+## 🎙️ Greffier ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
+
+Bot Discord : enregistre une réunion à la demande, transcription locale (whisper.cpp) et synthèse
+
+- **Dernière version** : 0.5.0 (31/10/2026)
+- **Dernier commit** : 04/11/2026
+- **Activité** : 46 commits sur 7 j · 46 sur 30 j
+
+**Nouveautés**
+
+- Transcription automatique des réunions sur le PC
+- Synthèse et compte rendu publiés dans le salon Discord
+- Vraie voix Discord, une piste par personne
+
 ## 🤖 jarvis ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
 
 Assistant personnel (mails, agenda, GitHub) : lecture seule d'abord, chaque action validée par écrit
 
 - **Dernière version** : 0.2.0 (04/11/2026)
 - **Dernier commit** : 04/11/2026
-- **Activité** : 89 commits sur 7 j · 480 sur 30 j
+- **Activité** : 91 commits sur 7 j · 482 sur 30 j
 
 **Nouveautés**
 
 - assistant vocal, coffre à jetons, journal chaîné, lecture Gmail/Agenda/GitHub, classeur de papiers, appli Windows
-- init scaffold (profil side)
+- Démarrage du projet
 
 ## 🧱 socle ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square)
 
@@ -51,26 +65,12 @@ Création de sites vitrines pour artisans et commerces locaux : repérage, maque
 
 - **Dernière version** : 0.2.0 (04/11/2026)
 - **Dernier commit** : 04/11/2026
-- **Activité** : 121 commits sur 7 j · 530 sur 30 j
+- **Activité** : 122 commits sur 7 j · 531 sur 30 j
 
 **Nouveautés**
 
 - Générateur de sites vitrines par métier, prospection et catalogue hors ligne
-- init scaffold (profil side)
-
-## 🎙️ Greffier ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
-
-Bot Discord : enregistre une réunion à la demande, transcription locale (whisper.cpp) et synthèse
-
-- **Dernière version** : 0.5.0 (31/10/2026)
-- **Dernier commit** : 02/11/2026
-- **Activité** : 45 commits sur 7 j · 45 sur 30 j
-
-**Nouveautés**
-
-- Transcription automatique sur le PC : tâche toutes les 5 min sans processus résident, par lots pour les longues…
-- Chaîne après enregistrement : session livrée au dossier d'échange, synthèse par claude -p sans outil, compte rendu daté…
-- Voix Discord réelle (discord.js 14.27, @discordjs/voice 0.19.2 DAVE) : une piste par personne, chevauchements séparés…
+- Démarrage du projet
 
 ## 🎓 Formation AIS ![démarrage déc. 2026](https://img.shields.io/badge/d%C3%A9marrage_d%C3%A9c._2026-f0883e?style=flat-square)
 
@@ -133,11 +133,7 @@ App mobile de productivité (matrice d'Eisenhower), 13 langues
 | Projet | Versions (30 j) | Taux d'échec (%) | Réparation |
 |---|---|---|---|
 | ColdBoot | 34 | 35 | 5 h |
-| jarvis | 1 | 100 | 5 h |
-| socle | 95 | 47 | 1 h |
-| webforge | 2 | 50 | 5 h |
 | Greffier | 5 | 20 | 3 h |
-| Tarkov Overlay | 0 | — | — |
-| RaceIA | 0 | — | — |
+| socle | 95 | 47 | 1 h |
 
-Versions : publiées sur les 30 derniers jours. Taux d'échec : part de ces versions suivies d'un correctif dans les 7 jours (avant la version suivante). Réparation : médiane du délai entre une version en échec et son premier correctif.
+Projets avec au moins 3 versions sur les 30 derniers jours. Versions : publiées sur les 30 derniers jours. Taux d'échec : part de ces versions suivies d'un correctif dans les 7 jours (avant la version suivante). Réparation : médiane du délai entre une version en échec et son premier correctif.
