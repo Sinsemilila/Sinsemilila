@@ -31,6 +31,20 @@ Assistant personnel (mails, agenda, GitHub) : lecture seule d'abord, chaque acti
 - assistant vocal, coffre à jetons, journal chaîné, lecture Gmail/Agenda/GitHub, classeur de papiers, appli Windows
 - init scaffold (profil side)
 
+## 🧱 socle ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square)
+
+Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber
+
+- **Dernière version** : 0.89.0 (04/11/2026)
+- **Dernier commit** : 04/11/2026
+- **Activité** : 185 commits sur 7 j · 1203 sur 30 j
+
+**Nouveautés**
+
+- brique 15, squelette de la recette complète du lab
+- brique 10c, durcissement de la prod et retour arrière automatique
+- brique 7, serveur de sauvegarde, copies chiffrées et hors-site
+
 ## 🌐 webforge ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
 
 Création de sites vitrines pour artisans et commerces locaux : repérage, maquettes par métier
@@ -43,20 +57,6 @@ Création de sites vitrines pour artisans et commerces locaux : repérage, maque
 
 - Générateur de sites vitrines par métier, prospection et catalogue hors ligne
 - init scaffold (profil side)
-
-## 🧱 socle ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square)
-
-Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber
-
-- **Dernière version** : 0.86.0 (20/10/2026)
-- **Dernier commit** : 03/11/2026
-- **Activité** : 181 commits sur 7 j · 1199 sur 30 j
-
-**Nouveautés**
-
-- brique 12b, peuplement automatique de DVWA
-- brique 12c-2c, durcissement adlab (détection + idempotence + non-fuite)
-- brique 12c-2b, failles AD semées dans atelier.lab
 
 ## 🎙️ Greffier ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
 
@@ -134,8 +134,8 @@ App mobile de productivité (matrice d'Eisenhower), 13 langues
 |---|---|---|---|
 | ColdBoot | 34 | 35 | 5 h |
 | jarvis | 1 | 100 | 5 h |
+| socle | 95 | 47 | 1 h |
 | webforge | 2 | 50 | 5 h |
-| socle | 92 | 49 | 1 h |
 | Greffier | 5 | 20 | 3 h |
 | Tarkov Overlay | 0 | — | — |
 | RaceIA | 0 | — | — |
