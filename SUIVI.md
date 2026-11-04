@@ -1,16 +1,56 @@
 # Suivi des projets
 
-Mis à jour le 02/11/2026
+Mis à jour le 04/11/2026
 
-4 actifs · 1 calme · 3 en pause
+7 actifs · 1 calme · 3 en pause
+
+## 🎮 ColdBoot ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
+
+Jeu de hacking narratif (Godot), façon Uplink / Hacknet — construit par agents autonomes
+
+- **Dernière version** : 0.33.0 (22/10/2026)
+- **Dernier commit** : 04/11/2026
+- **Activité** : 1 commit sur 7 j · 848 sur 30 j
+
+**Nouveautés**
+
+- L'alerte d'une visite reste à la machine visitée
+- Visite surveillée, T2 exige le rapatriement
+- Outils façon Hacknet, tuto en quatre contrats
+
+## 🤖 jarvis ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
+
+Assistant personnel (mails, agenda, GitHub) : lecture seule d'abord, chaque action validée par écrit
+
+- **Dernière version** : 0.2.0 (04/11/2026)
+- **Dernier commit** : 04/11/2026
+- **Activité** : 89 commits sur 7 j · 480 sur 30 j
+
+**Nouveautés**
+
+- assistant vocal, coffre à jetons, journal chaîné, lecture Gmail/Agenda/GitHub, classeur de papiers, appli Windows
+- init scaffold (profil side)
+
+## 🌐 webforge ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
+
+Création de sites vitrines pour artisans et commerces locaux : repérage, maquettes par métier
+
+- **Dernière version** : 0.2.0 (04/11/2026)
+- **Dernier commit** : 04/11/2026
+- **Activité** : 121 commits sur 7 j · 530 sur 30 j
+
+**Nouveautés**
+
+- Générateur de sites vitrines par métier, prospection et catalogue hors ligne
+- init scaffold (profil side)
 
 ## 🧱 socle ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square)
 
 Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber
 
 - **Dernière version** : 0.86.0 (20/10/2026)
-- **Dernier commit** : 01/11/2026
-- **Activité** : 228 commits sur 7 j · 1164 sur 30 j
+- **Dernier commit** : 03/11/2026
+- **Activité** : 181 commits sur 7 j · 1199 sur 30 j
 
 **Nouveautés**
 
@@ -18,19 +58,19 @@ Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber
 - brique 12c-2c, durcissement adlab (détection + idempotence + non-fuite)
 - brique 12c-2b, failles AD semées dans atelier.lab
 
-## 🎮 ColdBoot ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
+## 🎙️ Greffier ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
 
-Jeu de hacking narratif (Godot), façon Uplink / Hacknet — construit par agents autonomes
+Bot Discord : enregistre une réunion à la demande, transcription locale (whisper.cpp) et synthèse
 
-- **Dernière version** : 0.33.0 (22/10/2026)
-- **Dernier commit** : 27/10/2026
-- **Activité** : 2 commits sur 7 j · 847 sur 30 j
+- **Dernière version** : 0.5.0 (31/10/2026)
+- **Dernier commit** : 02/11/2026
+- **Activité** : 45 commits sur 7 j · 45 sur 30 j
 
 **Nouveautés**
 
-- L'alerte d'une visite reste à la machine visitée
-- Visite surveillée, T2 exige le rapatriement
-- Outils façon Hacknet, tuto en quatre contrats
+- Transcription automatique sur le PC : tâche toutes les 5 min sans processus résident, par lots pour les longues…
+- Chaîne après enregistrement : session livrée au dossier d'échange, synthèse par claude -p sans outil, compte rendu daté…
+- Voix Discord réelle (discord.js 14.27, @discordjs/voice 0.19.2 DAVE) : une piste par personne, chevauchements séparés…
 
 ## 🎓 Formation AIS ![démarrage déc. 2026](https://img.shields.io/badge/d%C3%A9marrage_d%C3%A9c._2026-f0883e?style=flat-square)
 
@@ -52,7 +92,7 @@ Overlay PVE pour Escape from Tarkov : quêtes, planque, prix
 
 - **Dernière version** : 0.13.0 (05/10/2026)
 - **Dernier commit** : 19/10/2026
-- **Activité** : 0 commit sur 7 j · 65 sur 30 j
+- **Activité** : 0 commit sur 7 j · 7 sur 30 j
 
 **Nouveautés**
 
@@ -92,9 +132,12 @@ App mobile de productivité (matrice d'Eisenhower), 13 langues
 
 | Projet | Versions (30 j) | Taux d'échec (%) | Réparation |
 |---|---|---|---|
-| socle | 92 | 49 | 1 h |
 | ColdBoot | 34 | 35 | 5 h |
-| Tarkov Overlay | 12 | 67 | 13 min |
+| jarvis | 1 | 100 | 5 h |
+| webforge | 2 | 50 | 5 h |
+| socle | 92 | 49 | 1 h |
+| Greffier | 5 | 20 | 3 h |
+| Tarkov Overlay | 0 | — | — |
 | RaceIA | 0 | — | — |
 
 Versions : publiées sur les 30 derniers jours. Taux d'échec : part de ces versions suivies d'un correctif dans les 7 jours (avant la version suivante). Réparation : médiane du délai entre une version en échec et son premier correctif.
