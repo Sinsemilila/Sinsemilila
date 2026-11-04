@@ -2,7 +2,7 @@
 
 Mis à jour le 04/11/2026
 
-7 actifs · 1 calme · 3 en pause
+8 actifs · 0 calme · 3 en pause
 
 ## 🎮 ColdBoot ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
 
@@ -51,13 +51,27 @@ Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber
 
 - **Dernière version** : 0.89.0 (04/11/2026)
 - **Dernier commit** : 04/11/2026
-- **Activité** : 185 commits sur 7 j · 1203 sur 30 j
+- **Activité** : 187 commits sur 7 j · 1205 sur 30 j
 
 **Nouveautés**
 
 - brique 15, squelette de la recette complète du lab
 - brique 10c, durcissement de la prod et retour arrière automatique
 - brique 7, serveur de sauvegarde, copies chiffrées et hors-site
+
+## 🎯 Tarkov Overlay ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
+
+Overlay PVE pour Escape from Tarkov : quêtes, planque, prix
+
+- **Dernière version** : 0.13.0 (05/10/2026)
+- **Dernier commit** : 04/11/2026
+- **Activité** : 1 commit sur 7 j · 8 sur 30 j
+
+**Nouveautés**
+
+- Lecture de la planque et besoins des stations au survol
+- Marchand reconnu à son portrait, Fence pris en charge
+- Toutes les quêtes de chaque marchand lues, noms sur deux lignes
 
 ## 🌐 webforge ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square)
 
@@ -74,7 +88,7 @@ Création de sites vitrines pour artisans et commerces locaux : repérage, maque
 
 ## 🎓 Formation AIS ![démarrage déc. 2026](https://img.shields.io/badge/d%C3%A9marrage_d%C3%A9c._2026-f0883e?style=flat-square)
 
-Préparation du titre RNCP37680, suivi de progression maison
+Préparation du titre RNCP37680 : formation O'clock de déc. 2026 à nov. 2027
 
 - **Dernier commit** : 23/10/2026
 - **Activité** : 0 commit sur 7 j · 22 sur 30 j
@@ -85,20 +99,6 @@ Copilote IA de maître du jeu D&D 5e sur Foundry VTT auto-hébergé
 
 - **Dernier commit** : 23/10/2026
 - **Activité** : 0 commit sur 7 j · 164 sur 30 j
-
-## 🎯 Tarkov Overlay ![calme](https://img.shields.io/badge/calme-d29922?style=flat-square)
-
-Overlay PVE pour Escape from Tarkov : quêtes, planque, prix
-
-- **Dernière version** : 0.13.0 (05/10/2026)
-- **Dernier commit** : 19/10/2026
-- **Activité** : 0 commit sur 7 j · 7 sur 30 j
-
-**Nouveautés**
-
-- planque
-- le marchand actif est reconnu par la position de son portrait
-- la dernière quête de chaque marchand est lue
 
 ## 🗣️ AcademIA ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square)
 
