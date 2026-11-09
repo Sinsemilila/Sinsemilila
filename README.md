@@ -63,14 +63,14 @@ Une session Claude Code tourne en permanence sur mon serveur. Je la pilote depui
 | | Projet | Ce que c'est | État |
 |---|---|---|---|
 | 🎮 | **ColdBoot** | Jeu de hacking narratif (Godot), façon Uplink / Hacknet — construit par agents autonomes | ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square) |
-| 🎙️ | **Greffier** | Bot Discord : enregistre une réunion à la demande, transcription locale (whisper.cpp) et synthèse | ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square) |
+| 🎓 | **Formation AIS** | Préparation du titre RNCP37680 : formation O'clock de déc. 2026 à nov. 2027 | ![démarrage déc. 2026](https://img.shields.io/badge/d%C3%A9marrage_d%C3%A9c._2026-f0883e?style=flat-square) |
 | 🤖 | **jarvis** | Assistant personnel (mails, agenda, GitHub) : lecture seule d'abord, chaque action validée par écrit | ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square) |
 | 🧱 | **socle** | Refonte du homelab : zones cloisonnées, AD/GPO, supervision, terrain cyber | ![en construction](https://img.shields.io/badge/en_construction-f0883e?style=flat-square) |
-| 🎯 | **Tarkov Overlay** | Overlay PVE pour Escape from Tarkov : quêtes, planque, prix | ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square) |
 | 🌐 | **webforge** | Création de sites vitrines pour artisans et commerces locaux : repérage, maquettes par métier | ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square) |
-| 🎓 | **Formation AIS** | Préparation du titre RNCP37680 : formation O'clock de déc. 2026 à nov. 2027 | ![démarrage déc. 2026](https://img.shields.io/badge/d%C3%A9marrage_d%C3%A9c._2026-f0883e?style=flat-square) |
+| 🎙️ | **Greffier** | Bot Discord : enregistre une réunion à la demande, transcription locale (whisper.cpp) et synthèse | ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square) |
+| 🗣️ | **AcademIA** | Apprentissage des langues piloté par LLM, pédagogie adaptative | ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square) |
+| 🎯 | **Tarkov Overlay** | Overlay PVE pour Escape from Tarkov : quêtes, planque, prix | ![actif](https://img.shields.io/badge/actif-3fb950?style=flat-square) |
 | 🐉 | **MJIA** | Copilote IA de maître du jeu D&D 5e sur Foundry VTT auto-hébergé | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
-| 🗣️ | **AcademIA** | Apprentissage des langues piloté par LLM, pédagogie adaptative | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 | 🏎️ | **RaceIA** | Ingénieur de course IA pour Assetto Corsa : télémétrie, analyse des virages, briefing | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 | ✅ | **Eisenday** | App mobile de productivité (matrice d'Eisenhower), 13 langues | ![en pause](https://img.shields.io/badge/en_pause-8b949e?style=flat-square) |
 <!-- vitrine:projets:fin -->
